@@ -8,9 +8,9 @@ namespace game
 {
     public class drawBoard
     {
-        //string drawboardChar = " ";
+        string drawboardChar = " ";
         char width = '|';
-        char height = '-';
+        string height = "-+";
         
 
         static void Main(string[] args)
@@ -23,32 +23,26 @@ namespace game
         private void draw_board(int x, int y)
         {
             //Column
-            for (int j = 0; j < y; j++)
+            for (int j = 0; j < y *2; j++)
             {
-               
-                string widthPrint = new String(width ,x);
-                string rowPrint = new String(height, x);
-                
-                Console.WriteLine(widthPrint);
-                Console.WriteLine(rowPrint);
-                
+                Console.Write("\n");
+       
                 //Row
                 for (int i = 0; i < x; i++)
                 {    
-                       // string widthPrint = new String(width ,x);
-                       // string rowPrint = new string('-', y);
-                       // Console.WriteLine(widthPrint);
-                       // Console.WriteLine(rowPrint);
-                        //Console.ReadLine();
-                        
-                    
+                       if (j%2 == 0)
+                        {
+                       Console.Write(drawboardChar + width);
+                        }
+
+                        if (j%2 == 1)
+                        {
+                            Console.Write(height);
+                        }                    
                 }
-                //Console.ReadLine();
 
             }  
             Console.ReadLine();
         }
-
-
     }
 }
